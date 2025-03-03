@@ -1,0 +1,1 @@
+https://github.com/python/python-docs-zh-tw?tab=readme-ov-file#翻譯守則
