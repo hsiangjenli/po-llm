@@ -1,0 +1,21 @@
+FROM python:3.10-slim
+
+ENV OUTPUT_FORMAT=html
+
+WORKDIR /workspace
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libgraphviz-dev \
+    make
+
+RUN pip install --upgrade pip && pip install \
+    sphinx-rtd-theme \
+    Sphinx==8.0.0 \
+    pygraphviz \
+    autodoc_pydantic[erdantic] \
+    sphinx-simplepdf \
+    nbsphinx \
+    toml
+
+CMD ["sh", "-c", "pip install --no-deps -e . && cd docs && make $OUTPUT_FORMAT"]
