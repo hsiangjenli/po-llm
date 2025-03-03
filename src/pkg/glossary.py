@@ -6,9 +6,12 @@
 # https://docs.python.org/zh-tw/3/glossary.html
 # https://hackmd.io/@l10n-tw/glossaries
 
+import re
 import urllib
 
 import pandas as pd
+import requests
+from bs4 import BeautifulSoup
 
 csv_path = __file__.replace("glossary.py", "glossary.csv")
 
@@ -18,6 +21,26 @@ def get_glossary_table(url: str):
     return pd.read_html(encoded_url, encoding="utf-8")
 
 
+def get_glossary_from_python_docs_zh_tw():
+    url = "https://docs.python.org/zh-tw/3/glossary.html"
+    r = requests.get(url)
+    r.encoding = "utf-8"
+    soup = BeautifulSoup(r.text, "html.parser")
+    translated = soup.find_all("dt", class_="translated")
+
+    glossary = []
+    pattern = r"([a-zA-Z\s-]+)（([^）]+)）"
+
+    for dt in translated:
+        matches = re.findall(pattern, dt.text)
+
+        if matches:
+            glossary.extend(matches)
+
+    df = pd.DataFrame(glossary, columns=["原文", "翻譯"])
+    return df
+
+
 if __name__ == "__main__":
     python_docs_zh_tw_df = get_glossary_table(
         url="https://github.com/python/python-docs-zh-tw/wiki/術語列表"
@@ -25,6 +48,7 @@ if __name__ == "__main__":
     taiwan_china_computer_terms_df = get_glossary_table(
         url="https://zh.wikibooks.org/zh/大陆台湾计算机术语对照表"
     )[0]
+    python_docs_zh_tw_df_official = get_glossary_from_python_docs_zh_tw()
 
     # merge two dataframes by columns
     python_docs_zh_tw_df = python_docs_zh_tw_df[["原文", "翻譯"]]
@@ -32,7 +56,14 @@ if __name__ == "__main__":
 
     # rename columns
     taiwan_china_computer_terms_df.columns = python_docs_zh_tw_df.columns
-    df = pd.concat([python_docs_zh_tw_df, taiwan_china_computer_terms_df], axis=0)
+    df = pd.concat(
+        [
+            python_docs_zh_tw_df,
+            taiwan_china_computer_terms_df,
+            python_docs_zh_tw_df_official,
+        ],
+        axis=0,
+    )
 
     # drop duplicates
     df["原文"] = df["原文"].str.lower()
