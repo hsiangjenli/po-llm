@@ -20,6 +20,9 @@ beautifulsoup4==4.13.3
 certifi==2025.1.31
     # via httpcore
     # via httpx
+    # via requests
+charset-normalizer==3.4.1
+    # via requests
 distro==1.9.0
     # via openai
 exceptiongroup==1.2.2
@@ -35,6 +38,7 @@ httpx==0.28.1
 idna==3.10
     # via anyio
     # via httpx
+    # via requests
 jiter==0.8.2
     # via openai
 lxml==5.3.1
@@ -55,6 +59,8 @@ python-dateutil==2.9.0.post0
     # via pandas
 pytz==2025.1
     # via pandas
+requests==2.32.3
+    # via python-package-template
 six==1.17.0
     # via html5lib
     # via python-dateutil
@@ -73,5 +79,7 @@ typing-extensions==4.12.2
     # via pydantic-core
 tzdata==2025.1
     # via pandas
+urllib3==2.3.0
+    # via requests
 webencodings==0.5.1
     # via html5lib
