@@ -1,0 +1,537 @@
+原文,翻譯
+abstract,摘要；抽象的
+abstraction,抽象
+access,存取 (win)；取用 (mac)
+accessibility,無障礙；協助工具 (win)；輔助功能 (mac)
+activate,啟用，啟動
+activation,啟用，啟動
+active,使用中的；現行的；有效的；啟用的
+adapter,介面卡，配接器 (win)；轉接器 (mac)
+adaptor,介面卡，配接器 (win)；轉接器 (mac)
+add,加入
+address,位址，地址
+advanced,進階的
+aggregation,聚合
+ai  artificial intelligence ,人工智慧
+algorithm,演算法
+allocate,配置
+allocator,配置器
+annotation,註釋 (win)；註解 (mac)；詮釋 (web)
+app bundle,應用程式套件組合 (win)；App 套件 (mac)
+application,應用；應用程式
+apply,套用
+approximate,近似
+architecture,架構；結構
+argument,引數
+arity,元數（所需運算元的數量）
+array,陣列
+artifact,成品 (win/mac)；產出物 (web)
+assembly language,組合語言
+assert,判斷提示 (win)；宣告 (win/mac)；聲明 (mac)
+assertion,判斷提示 (win)；宣告 (win/mac)；聲明 (mac)
+assign,指派；（程式設計）賦值
+assignment,指派；（程式設計）賦值
+assignment operator,指派運算子
+asynchronize,非同步
+asynchronous,非同步的
+atomic,不可分割的
+attribute,屬性
+audio,音訊；音效
+authenticate,驗證，認證
+authentication,驗證，認證
+authorize,授權
+authorization,授權
+autoboxing,自動裝箱
+background processes,背景程序，背景處理程序
+bandwidth,頻寬
+base class,基底類別
+batch,批次（處理）
+binary function,二元函式
+binary operator,二元運算子
+binary search,二元搜尋法
+binary tree,二元樹
+bind,繫結 (win)；綁定 (mac)
+bit,位元
+bitrate,位元率
+block,（程式碼）區塊
+block,封鎖；阻擋
+blocker,封鎖程式 (win)；阻擋器 (mac)
+boolean,boolean（布林）
+boolean,布林
+bounce,退回；彈跳
+breakpoint,中斷點
+build  noun ,構件；版本（號）
+build  verb ,建構 (mac)；建置，組建 (win)
+build in,內建
+bundle  noun ,組合包 (win)；套件 (mac)；套組
+bundle  verb ,整合
+burn,燒錄
+bus,匯流排
+byte,位元組
+cache,快取記憶體，快取
+call,呼叫
+callback,回呼
+carriage return,回車字元
+certificate,憑證
+character,字元
+check,查看
+check box,核取方塊 (win)；註記框 (mac)
+checkbox,核取方塊 (win)；註記框 (mac)
+child,子- / 下代
+cipher,密碼
+class,類別
+click  vs  tap ,點選 (win)；按一下，點/選按 (mac)
+client side,用戶端
+clipboard,剪貼簿 (win)；剪貼板 (mac)
+clone,複製
+cloud computing,雲端運算
+cohesion,內聚
+collaborate,（協同）合作
+collaboration,（協同）合作
+combo box,組合方塊；下拉式方塊 (win)
+come with,隨附
+command,指令
+command line,命令列
+comment,留言
+comment,註解，註釋
+commit,提交
+communication,通訊
+community,社群
+compatibility,相容性
+compatible,相容的
+compile time,編譯期
+compile,編譯
+compilation,編譯
+compiler,編譯器
+component,組件；元件
+composition,組合
+compress,壓縮
+concurrency,並行性，並行
+concurrent,並行的；同時的
+condition,條件
+configuration,配置；設定 (mac)；組態 (win)
+connect,連接；（網路、資料庫）連線
+connection,連接；（網路、資料庫）連線
+constant,常數
+constraint,約束；限制
+constructor,建構子，建構式，建構函式
+container,容器
+context,背景（關係）；環境；上下文；内容
+continuous delivery,持續交付
+continuous deployment,持續部署
+continuous integration,持續整合
+contributor,貢獻者
+control,控制元件，控制項
+copy,複製 (win)；拷貝 (mac)
+coroutine,協程，協同程式
+coupling,耦合
+crash,當機 (win/mac)；毀損 (win)
+create,建立
+cursor,游標
+custom,自訂
+data,資料
+data link layer,資料連結層
+data structure,資料結構
+database,資料庫
+database schema,資料庫綱要 (mac)；資料庫結構描述 (win)
+deadlock,死結；鎖死
+debug,除錯 (win/mac)；偵錯 (win)
+debugger,除錯器
+declare,宣告，聲明
+declaration,宣告，聲明
+default,預設
+definition,定義；解析度
+delegate,委派
+delegation,委派
+dependency,相依性；依賴關係
+deprecated,已棄用
+derived class,衍生類別
+design pattern,設計模式
+destructor,解構式，解構函式
+detect,偵測
+detection,偵測
+device,裝置
+dialog,對話方塊 (win)；對話框 (mac)
+dictionary,dictionary（字典）
+digital,數位的；數位化
+digital certificate,數位憑證
+digital signature,數位簽章
+directory,目錄
+disk,碟
+disk image,磁碟映像檔
+dispatch,分派
+distribute,分發；分配；分散
+distribution,分發；分配；分散
+distributed,分散式
+distribution,發布/發行（版本）；發行套件
+document,文件
+domain,網域
+driver,驅動程式
+drop down list,下拉式清單
+drop down menu,下拉式功能表 (win)；下拉式選單 (mac)
+drop down,下拉式選單
+dropdown  noun ,下拉式選單
+drop down,下拉
+dropdown  verb ,下拉
+dynamic binding,動態繫結，動態連結，動態綁定
+element,元素；元件
+element,元素
+email,電子郵件
+e mail,電子郵件
+enable,啟用
+encapsulation,封裝
+enter,確認；進入
+entity,實體
+enumeration,列舉
+equal,相等的
+equality,相等性，相等
+escape code,跳脫碼，逸出碼，轉義碼
+evaluate,給值 / 計算
+event,事件
+exception,例外
+explicit,明確的 (win)；顯式 (mac)
+export,匯出
+expression,運算式
+expression,運算式 (win)；表示式 (mac)；表達式
+extension,副檔名
+extension,擴充（程式、功能）；擴充功能 (win)；延伸功能 (mac)
+feature,特色，特點，特徵
+feature  vs  function ,（特殊的）功能
+feedback,回饋
+field,欄位；域
+file,檔案
+file system,檔案系統
+filter,過濾器
+finalizing   finalize,最終化
+find,尋找
+firmware,韌體
+flag,旗標
+flash memory,快閃記憶體
+float,float（浮點數）
+flush,排清，清除
+flush,對齊，齊平
+folder,資料夾 (win)；檔案夾 (mac)
+font,字型 (win)；字體 (mac)
+form,表單
+format  noun ,格式
+format  verb ,格式化
+forward,轉發，轉送，轉寄
+fragment,片段
+frame,影格，畫面；框架
+frame rate fps  frames per second ,影格率，畫面更新率
+framework,框架
+frozen,（軟體或影片）畫面定格；凍結，鎖定
+full screen,全螢幕
+fullscreen,全螢幕
+function,函式，函數
+function,函式
+function  vs  feature ,（一般的）功能
+functionality,功能
+game,遊戲
+gateway,閘道器
+general,一般的
+generate,產生
+generic,通用的
+generics,泛型
+global,全域的；總體的，整體的，通用的
+global,全域
+graph,圖
+group box,群組方塊
+handle,控制代碼
+handler,處理常式，處理程式，處理器
+hardware,硬體
+hash,雜湊
+header file,標頭檔
+heap,堆積
+help,使用說明；說明；幫助
+helper,幫助函式、輔助函式
+hierarchy,階層
+high definition,高解析度，高畫質
+home folder,主資料夾 (win)；個人專屬檔案夾 (mac)
+home page,首頁，主頁
+host file,主機檔案，host 檔案
+icon,圖示 (win) 圖像 (mac)
+ide,整合式開發環境
+identifier,識別字
+identity,識別性
+idle,閒置
+image,影像；圖像，圖片；映像檔
+immutable,不可變的；無法更改的
+implement,實作
+implementation,實作（品）
+implicit,隱含的 (win)；隱式 (mac)
+import,匯入
+import,import（不翻譯）、引入
+indent,縮排
+index,索引
+info,資訊
+information,資訊
+inheritance,繼承
+initialization,初始化
+inline,行內；內嵌
+instance,實例
+instance,實體；實例
+int,int（整數）
+integrate,整合
+integrated,整合式，整合的
+integrity,完整性
+interact,互動
+interaction,互動
+interface,介面
+internal storage,內部儲存
+internationalization  i18n ,國際化
+internet,網際網路
+interpreter,直譯器
+invoke,呼叫 (mac) 執行，叫用 (win)
+iterate,疊代； 反覆（運算）
+iterate,疊代
+iteration,疊代
+iterator,疊代器
+kernel,核心
+key,金鑰，密鑰
+keybind,快速鍵
+lag,延遲
+layout,布局，配置
+lazy loading,惰性載入；消極式載入；延遲載入；懶載入
+level,階 / 層級 / 層
+lexer,詞法分析器
+lexical analyzer,詞法分析器
+lexical analysis,詞法分析
+library,程式庫，函式庫
+library,函式庫
+link,連結
+link time,連結期
+linked list,連結串列
+linker,連結器
+list,清單；列表
+list,list（串列）
+listener,監聽器
+literal constant,字面常數，字面常值
+literals,字面值，定數，常值
+load,載入
+load time,載入期
+loader,載入器
+local,區域
+local,區域的，本地的；本機
+local variable,區域變數
+localization  l10n ,在地化
+lock,鎖定
+log,記錄
+log in,登入
+login,登入
+log out,登出
+logout,登出
+loop,迴圈
+loop,迴圈；重複；循環
+macro,巨集
+map,對應；映射
+mapping,對應；映射
+match,配對；符合；配合；比對；匹配
+memory,記憶體
+menu,選單；功能表
+message,訊息
+metadata,中繼資料 (win) 後設資料 (mac) 詮釋資料
+method,method（方法）
+middleware,中介層，中介軟體
+mobile,行動
+mock,mock
+moderate,審核
+moderation,審核
+modifier,修飾子，修飾詞
+module,module（模組）
+module,模組
+monomorphism,單型
+motherboard,主機板
+mouse,滑鼠
+mouse pointer,滑鼠指標
+multitasking,多工（處理）
+mutable,可變的
+mutex,互斥
+native,原生
+navigate,導覽
+navigation,導覽
+navigator,導覽器
+nested,巢狀的
+network,網路
+new,新增
+notarization,公證
+object,物件
+object code,目的碼
+object file,目的檔，目的碼檔
+object oriented,物件導向
+online,線上
+operand,運算元
+operating system,作業系統
+operator,運算子
+optimize,最佳化
+optimization,最佳化
+option,選項
+overflow,溢位（上限溢位）
+overlay,嵌入介面
+overload,多載，覆載，重載
+override,覆寫，重寫
+pack,封裝，壓縮
+package  noun ,套件，軟體包
+package  verb ,封裝
+pane,窗格 (win) 面板 (mac)
+parallelism,平行性，平行
+parameter,參數
+parent,父- / 上代
+parse,剖析
+parse,分析；剖析；解析
+parser,剖析器
+parser,語法剖析器
+partition,分割；（硬碟）分割區
+paste,貼上
+patch,更新檔 (win) 修補程式 (mac)
+patch,patch
+pattern,模式；樣式
+performance,效能
+persistence,持續性
+photo,照片
+physical layer,實體層
+picklist,挑選清單 (win)；選取列表 (mac)
+placeholder,佔位符號， 預留位置 (win) 暫存區 (mac)
+pluggability,可拔插性
+plugin,外掛程式 (win) 外掛模組 (mac)
+point   click  noun ,點按
+pointer,指標
+policy,政策 / 原則
+polymorphism,多型
+port,（連接）埠
+power bank,行動電源
+presentation layer,表現層
+preset,預設
+print,列印
+printer,列印機，印表機
+procedure,程序
+process,行程；程序
+profile,評測
+profile,設定檔 (win) 描述檔 (mac)
+profile  or personal profile ,個人檔案
+profiler,（效能）分析工具
+program,程式
+project,專案
+prompt,提示字元
+protocol,協定
+provision,佈建
+provisioning,佈建
+proxy  or proxy server ,代理伺服器
+pseudo code,虛擬碼
+pull down list,下拉式清單
+quality,品質
+queue,佇列
+quit unexpectedly,(App)閃退
+radian,徑度
+radio button,選項按鈕 (win) 圓形按鈕 (mac)
+ram  random access memory ,隨機存取記憶體
+read,讀取
+read only,唯讀
+recovery,復原，還原
+recursion,遞迴
+redirect,重新導向；轉址
+redirection,重新導向；轉址
+reference,參照，參考
+register,暫存器；註冊
+regular expression,正規表示式；正規表示法；正規表達式；規則運算式
+release,（發行、發布）版本
+remote,遠端
+render,算繪；渲染
+resolution,解析度
+response,回應
+response body,回應本文
+response header,回應標頭
+restore,還原 (win)，回復 (mac)
+return,回傳
+return,回傳，傳回；恢復
+revoke,撤銷
+revocation,撤銷
+rollback,復原
+routine,常式
+run,執行
+runtime environment  rte ,執行環境；執行系統
+runtime system,執行環境；執行系統
+runtime,執行期；執行環境
+run time,執行期；執行環境
+sampling,取樣
+save,儲存
+scalar,純量
+schedule,排程
+scheduler,排程器，排程程式
+scope,（作用、有效）範圍，域
+script,指令碼 (win) 工序指令 (mac)
+scroll bar,捲軸
+sdk  software development kit ,軟體開發工具包 (win) 軟體開發套件 (mac)
+search engine,搜尋引擎
+security,安全性
+segment,區段
+semaphore,號誌
+server,伺服器
+server side,伺服器端
+session,（電腦網路）對談/話，會談/話；連線階段
+session,工作階段，作業階段
+session layer,會議層
+set,set（集合）
+set up,設定
+settings,設定
+shortcut,捷徑
+shortcut key,快速鍵
+sign in,登入
+sign out,登出
+signature,簽名 (signature)
+signature,簽章；簽名
+silicon,矽
+simulation,模擬
+slider,滑桿
+smart,智慧
+smartphone,智慧型手機
+sms  short message service ,簡訊
+snip,擷圖
+source code,原始碼
+stack,堆疊
+star rating,星級評等 (win) 星號評等 (mac)
+statement,陳述式
+statement,敘述，陳述（句）
+status bar,狀態列
+stepper,步進器
+stream,串流；資料流
+string,字串
+string interpolation,字串插值
+stuttering,（軟體或影片的畫面）斷斷續續
+subclass,子類別
+subroutine,副程式
+superclass,父類別
+support,支援
+suspend,暫停（權限）
+synchronize,同步
+synchronous,同步的
+syntactic analysis,語法分析；語法剖析
+tab,索引標籤，分頁，標籤（頁）
+tag,標記
+tap  vs  click ,輕觸 (win)；點一下 (mac)
+task,工作
+template,範本
+text,文字
+text box,文字框
+thread,執行緒
+token,標記 (win) 代號 (mac)
+token,權杖；代幣
+top up,加值，儲值
+traverse,走訪
+tray  or system tray ,系統匣
+tree,樹
+tuple,元組
+tutorial,教學
+type,型別
+type,型別，型態
+universal,通用的
+variable,變數
+video,影片；視訊
+view,檢視；顯示；視圖
+voice,語音
+volume,磁碟區 (win)；卷宗 (mac)
+widget,視窗元件；小工具
+wildcard,萬用字元
+window,視窗
+workspaces,工作區；工作空間
+write,寫入
