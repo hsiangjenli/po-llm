@@ -18,6 +18,7 @@ dependencies = [
     "beautifulsoup4>=4.13.3",
     "requests>=2.32.3",
     "pytest-playwright>=0.7.0",
+    "typer>=0.15.2",
 ]
 readme = "README.md"
 requires-python = ">= 3.10"
@@ -31,3 +32,6 @@ allow-direct-references = true
 [tool.rye]
 managed = false
 dev-dependencies = []
+
+[project.scripts]
+pollm = "pkg.cli:app"
