@@ -8,10 +8,12 @@
 
 import re
 import urllib
+from io import StringIO
 
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from playwright.sync_api import sync_playwright
 
 csv_path = __file__.replace("glossary.py", "glossary.csv")
 
@@ -41,6 +43,22 @@ def get_glossary_from_python_docs_zh_tw():
     return df
 
 
+def get_glossary_from_hackmd():
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+
+        page.goto("https://hackmd.io/@l10n-tw/glossaries")
+        page.wait_for_load_state("load")
+
+        soup = BeautifulSoup(page.content(), "html.parser")
+        df = pd.read_html(StringIO(soup.prettify()), encoding="utf-8")[0]
+        df = df[["英文", "臺灣用語"]]
+        df.columns = ["原文", "翻譯"]
+
+        return df
+
+
 if __name__ == "__main__":
     python_docs_zh_tw_df = get_glossary_table(
         url="https://github.com/python/python-docs-zh-tw/wiki/術語列表"
@@ -49,6 +67,7 @@ if __name__ == "__main__":
         url="https://zh.wikibooks.org/zh/大陆台湾计算机术语对照表"
     )[0]
     python_docs_zh_tw_df_official = get_glossary_from_python_docs_zh_tw()
+    hackmd_df = get_glossary_from_hackmd()
 
     # merge two dataframes by columns
     python_docs_zh_tw_df = python_docs_zh_tw_df[["原文", "翻譯"]]
@@ -61,6 +80,7 @@ if __name__ == "__main__":
             python_docs_zh_tw_df,
             taiwan_china_computer_terms_df,
             python_docs_zh_tw_df_official,
+            hackmd_df,
         ],
         axis=0,
     )
@@ -74,6 +94,10 @@ if __name__ == "__main__":
 
     # remove dashes or symbols in 原文
     df["原文"] = df["原文"].str.replace("[^a-zA-Z0-9]", " ", regex=True)
+
+    # only keep single space
+    df["原文"] = df["原文"].str.replace(" +", " ", regex=True)
+
     df = df.drop_duplicates()
     df.reset_index(drop=True, inplace=True)
 
