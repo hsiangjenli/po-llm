@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "python-package-template"
+name = "pollm"
 version = "0.0.1"
 description = "Add your description here"
 authors = [
@@ -24,7 +24,7 @@ readme = "README.md"
 requires-python = ">= 3.10"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/pkg"]
+packages = ["src/pollm"]
 
 [tool.hatch.metadata]
 allow-direct-references = true
@@ -34,4 +34,4 @@ managed = false
 dev-dependencies = []
 
 [project.scripts]
-pollm = "pkg.cli:app"
+pollm = "pollm.cli:app"
