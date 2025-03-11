@@ -1,5 +1,5 @@
-https://github.com/python/python-docs-zh-tw?tab=readme-ov-file#翻譯守則
+請根據上述規則翻譯以下內容：
 
-以下內容需要翻譯成臺灣繁體中文。請保留所有 RST 格式（如標題、列表、代碼區塊等），不要對程式專有名詞做不必要的翻譯。請確保翻譯結果流暢且易懂：
+---
 
 {entry}
