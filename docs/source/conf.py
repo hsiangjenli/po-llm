@@ -50,5 +50,14 @@ pygments_style = "sphinx"
 autodoc_pydantic_model_show_json = False
 autodoc_pydantic_settings_show_json = False
 autodoc_mock_imports = [
-    # TODO: Add the list of modules that are not used in the documentation.
+    "polib",
+    "openai",
+    "pandas",
+    "lxml",
+    "html5lib",
+    "bs4",
+    "requests",
+    "playwright",
+    "typer",
+    "tqdm",
 ]

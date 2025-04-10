@@ -62,6 +62,19 @@ def cli_po_fuzzy(
         "fully", help="Translation mode, options: fully, untranslated"
     ),
 ):
+    """處理 PO 檔案中被標記為 fuzzy 的項目，使用 LLM 模型進行翻譯，並移除 fuzzy 標記.
+
+    .. code-block:: shell
+
+        pollm fuzzy <pofile> --model <model> --temperature <temperature> --max_messages <max_messages> --translate_mode <translate_mode>
+
+    Args:
+        pofile (Path): PO 檔案的路徑
+        model (str): 使用的模型名稱
+        temperature (float): 控制模型輸出的隨機程度
+        max_messages (int): 提供給模型的對話歷史訊息數量
+        translate_mode (str): 翻譯模式，可選 "fully" 或 "untranslated"
+    """
     po = polib.pofile(pofile)
     entries = po if translate_mode == "fully" else po.fuzzy_entries()
 
@@ -99,6 +112,19 @@ def cli_po_translate(
         "fully", help="Translation mode, options: fully, untranslated"
     ),
 ):
+    """處理 PO 檔案中未翻譯的項目，使用 LLM 模型進行翻譯.
+
+    .. code-block:: shell
+
+        pollm translate <pofile> --model <model> --temperature <temperature> --max_messages <max_messages> --translate_mode <translate_mode>
+
+    Args:
+        pofile (Path): PO 檔案的路徑
+        model (str): 使用的模型名稱
+        temperature (float): 控制模型輸出的隨機程度
+        max_messages (int): 提供給模型的對話歷史訊息數量
+        translate_mode (str): 翻譯模式，可選 "fully" 或 "untranslated"
+    """
     po = polib.pofile(pofile)
     entries = po if translate_mode == "fully" else po.untranslated_entries()
 
