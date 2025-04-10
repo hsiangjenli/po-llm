@@ -16,7 +16,7 @@ anyio==4.8.0
     # via httpx
     # via openai
 beautifulsoup4==4.13.3
-    # via python-package-template
+    # via pollm
 certifi==2025.1.31
     # via httpcore
     # via httpx
@@ -35,7 +35,7 @@ greenlet==3.1.1
 h11==0.14.0
     # via httpcore
 html5lib==1.1
-    # via python-package-template
+    # via pollm
 httpcore==1.0.7
     # via httpx
 httpx==0.28.1
@@ -49,7 +49,7 @@ iniconfig==2.0.0
 jiter==0.8.2
     # via openai
 lxml==5.3.1
-    # via python-package-template
+    # via pollm
 markdown-it-py==3.0.0
     # via rich
 mdurl==0.1.2
@@ -57,17 +57,17 @@ mdurl==0.1.2
 numpy==2.2.3
     # via pandas
 openai==1.65.2
-    # via python-package-template
+    # via pollm
 packaging==24.2
     # via pytest
 pandas==2.2.3
-    # via python-package-template
+    # via pollm
 playwright==1.50.0
     # via pytest-playwright
 pluggy==1.5.0
     # via pytest
 polib==1.2.0
-    # via python-package-template
+    # via pollm
 pydantic==2.10.6
     # via openai
 pydantic-core==2.27.2
@@ -82,16 +82,18 @@ pytest==8.3.5
 pytest-base-url==2.1.0
     # via pytest-playwright
 pytest-playwright==0.7.0
-    # via python-package-template
+    # via pollm
 python-dateutil==2.9.0.post0
     # via pandas
+python-dotenv==1.0.1
+    # via pollm
 python-slugify==8.0.4
     # via pytest-playwright
 pytz==2025.1
     # via pandas
 requests==2.32.3
+    # via pollm
     # via pytest-base-url
-    # via python-package-template
 rich==13.9.4
     # via typer
 shellingham==1.5.4
@@ -111,7 +113,7 @@ tomli==2.2.1
 tqdm==4.67.1
     # via openai
 typer==0.15.2
-    # via python-package-template
+    # via pollm
 typing-extensions==4.12.2
     # via anyio
     # via beautifulsoup4

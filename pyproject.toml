@@ -10,18 +10,22 @@ authors = [
   {name = "Hsiang-Jen Li", email = "hsiangjenli@gmail.com"}
 ]
 dependencies = [
-    "polib>=1.2.0",
-    "openai>=1.65.2",
-    "pandas>=2.2.3",
-    "lxml>=5.3.1",
-    "html5lib>=1.1",
-    "beautifulsoup4>=4.13.3",
-    "requests>=2.32.3",
-    "pytest-playwright>=0.7.0",
-    "typer>=0.15.2",
+  "polib>=1.2.0",
+  "openai>=1.65.2",
+  "pandas>=2.2.3",
+  "lxml>=5.3.1",
+  "html5lib>=1.1",
+  "beautifulsoup4>=4.13.3",
+  "requests>=2.32.3",
+  "pytest-playwright>=0.7.0",
+  "typer>=0.15.2",
+  "python-dotenv>=1.0.1"
 ]
 readme = "README.md"
 requires-python = ">= 3.10"
+
+[project.scripts]
+pollm = "pollm.cli:app"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pollm"]
@@ -32,6 +36,3 @@ allow-direct-references = true
 [tool.rye]
 managed = false
 dev-dependencies = []
-
-[project.scripts]
-pollm = "pollm.cli:app"
