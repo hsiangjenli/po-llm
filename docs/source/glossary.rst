@@ -2,4 +2,4 @@
 ==============
 
 .. csv-table:: Glossary
-   :file: ../../src/pkg/glossary.csv
+   :file: ../../src/pollm/glossary.csv
