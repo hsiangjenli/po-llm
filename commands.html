@@ -1,0 +1,156 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>使用方法 &mdash; python-package-template 0.0.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
+      <link rel="stylesheet" type="text/css" href="_static/autodoc_pydantic.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=278cfad8" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=e3a6060d"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="繁體中文對照表" href="glossary.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            python-package-template
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">繁體中文對照表</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">使用方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pollm.cli.cli_po_fuzzy"><code class="docutils literal notranslate"><span class="pre">cli_po_fuzzy()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pollm.cli.cli_po_translate"><code class="docutils literal notranslate"><span class="pre">cli_po_translate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">python-package-template</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">使用方法</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/commands.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>使用方法<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<dl class="py function" id="module-pollm.cli">
+<dt class="sig sig-object py" id="pollm.cli.cli_po_fuzzy">
+<span class="sig-prename descclassname"><span class="pre">pollm.cli.</span></span><span class="sig-name descname"><span class="pre">cli_po_fuzzy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pofile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Argument</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_messages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translate_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Option</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pollm.cli.cli_po_fuzzy" title="Link to this definition"></a></dt>
+<dd><p>處理 PO 檔案中被標記為 fuzzy 的項目，使用 LLM 模型進行翻譯，並移除 fuzzy 標記.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pollm<span class="w"> </span>fuzzy<span class="w"> </span>&lt;pofile&gt;<span class="w"> </span>--model<span class="w"> </span>&lt;model&gt;<span class="w"> </span>--temperature<span class="w"> </span>&lt;temperature&gt;<span class="w"> </span>--max_messages<span class="w"> </span>&lt;max_messages&gt;<span class="w"> </span>--translate_mode<span class="w"> </span>&lt;translate_mode&gt;
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pofile</strong> (<em>Path</em>) – PO 檔案的路徑</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – 使用的模型名稱</p></li>
+<li><p><strong>temperature</strong> (<em>float</em>) – 控制模型輸出的隨機程度</p></li>
+<li><p><strong>max_messages</strong> (<em>int</em>) – 提供給模型的對話歷史訊息數量</p></li>
+<li><p><strong>translate_mode</strong> (<em>str</em>) – 翻譯模式，可選 “fully” 或 “untranslated”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pollm.cli.cli_po_translate">
+<span class="sig-prename descclassname"><span class="pre">pollm.cli.</span></span><span class="sig-name descname"><span class="pre">cli_po_translate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pofile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Argument</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_messages</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translate_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">typer.Option</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pollm.cli.cli_po_translate" title="Link to this definition"></a></dt>
+<dd><p>處理 PO 檔案中未翻譯的項目，使用 LLM 模型進行翻譯.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pollm<span class="w"> </span>translate<span class="w"> </span>&lt;pofile&gt;<span class="w"> </span>--model<span class="w"> </span>&lt;model&gt;<span class="w"> </span>--temperature<span class="w"> </span>&lt;temperature&gt;<span class="w"> </span>--max_messages<span class="w"> </span>&lt;max_messages&gt;<span class="w"> </span>--translate_mode<span class="w"> </span>&lt;translate_mode&gt;
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pofile</strong> (<em>Path</em>) – PO 檔案的路徑</p></li>
+<li><p><strong>model</strong> (<em>str</em>) – 使用的模型名稱</p></li>
+<li><p><strong>temperature</strong> (<em>float</em>) – 控制模型輸出的隨機程度</p></li>
+<li><p><strong>max_messages</strong> (<em>int</em>) – 提供給模型的對話歷史訊息數量</p></li>
+<li><p><strong>translate_mode</strong> (<em>str</em>) – 翻譯模式，可選 “fully” 或 “untranslated”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="glossary.html" class="btn btn-neutral float-left" title="繁體中文對照表" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Hsiang-Jen Li.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
