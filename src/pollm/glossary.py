@@ -59,6 +59,15 @@ def get_glossary_from_hackmd():
         return df
 
 
+def search_glossary(text: str):
+    df = pd.read_csv(csv_path)
+
+    text_lower = text.lower()
+    df_filtered = df[df["原文"].str.lower().apply(lambda x: x in text_lower)]
+
+    return df_filtered.drop_duplicates(subset=["原文"]).to_dict(orient="records")
+
+
 if __name__ == "__main__":
     python_docs_zh_tw_df = get_glossary_table(
         url="https://github.com/python/python-docs-zh-tw/wiki/術語列表"
