@@ -16,6 +16,8 @@ RUN pip install --upgrade pip && pip install \
     autodoc_pydantic[erdantic] \
     sphinx-simplepdf \
     nbsphinx \
-    toml
+    toml \
+    myst_parser \
+    emoji
 
 CMD ["sh", "-c", "pip install --no-deps -e . && cd docs && make $OUTPUT_FORMAT"]
