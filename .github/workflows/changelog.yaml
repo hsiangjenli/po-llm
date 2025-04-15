@@ -40,6 +40,8 @@ jobs:
           branch: main
           commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }} [skip ci]'
           file_pattern: CHANGELOG.md
+          push_options: --force
+          skip_dirty_check: true
 
       # (1) Build .whl and .tar.gz files --------------------------------------------------------------- #
       - name: Build Python Package
