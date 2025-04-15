@@ -44,7 +44,7 @@ jobs:
       - name: Build PDF Documentation
         uses: addnab/docker-run-action@v3
         with:
-          image: hsiangjenli/sphinx-doc:2025-02-16
+          image: hsiangjenli/pollm:latest
           options: |
             -v ${{ github.workspace }}:/workspace
           run: pip install --no-deps -e . && cd docs && make simplepdf
@@ -53,7 +53,7 @@ jobs:
       - name: Build HTML Documentation
         uses: addnab/docker-run-action@v3
         with:
-          image: hsiangjenli/sphinx-doc:2025-02-16
+          image: hsiangjenli/pollm:latest
           options: |
             -v ${{ github.workspace }}:/workspace
           run: pip install --no-deps -e . && cd docs && make html
