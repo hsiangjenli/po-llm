@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import polib
@@ -11,7 +12,15 @@ from pollm.prompt_utils import PromptManager
 # Init ------------------------------------------------------------------------------------------- #
 app = typer.Typer()
 
-client = OpenAI(api_key="Ollama", base_url="http://localhost:11434/v1")
+# Set up the OpenAI api key
+api_key = os.getenv("POLLM_OPENAI_API_KEY") or "Ollama"
+kwargs = {"api_key": api_key}
+
+if api_key == "Ollama":
+    kwargs["base_url"] = "http://localhost:11434/v1"
+
+
+client = OpenAI(**kwargs)
 
 messages = [
     {
