@@ -6,9 +6,30 @@
 POLLM
 =====
 
+Installation
+------------
+
+To install POLLM, you can use pip:
+
+.. code-block:: shell
+
+   pip install git+https://github.com/hsiangjenli/po-llm.git
+
+
+Export OpenAI API Key
+---------------------
+
+.. code-block:: shell
+
+   # zsh
+   echo 'export POLLM_OPENAI_API_KEY=你的API金鑰' >> ~/.zshrc
+   source ~/.zshrc
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    glossary
    commands
+
+   CHANGELOG.md
