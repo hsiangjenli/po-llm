@@ -1,0 +1,21 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [v0.0.3] - 2025-04-16
+### ✨ New Features
+- [`f647bac`](https://github.com/hsiangjenli/po-llm/commit/f647bacb4a9822e982a31fd52d6672dd07e9d0ec) - configure OpenAI client to use environment variable for API key *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+
+### 🐛 Bug Fixes
+- [`a7ed54c`](https://github.com/hsiangjenli/po-llm/commit/a7ed54caa2ca6abb6a936e50d526ee99e0b93529) - update Docker image for documentation builds to latest version *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+
+### 🔧 Chores
+- [`5c3f154`](https://github.com/hsiangjenli/po-llm/commit/5c3f154610cbb1ddac999d3b7a448c5660fa2da2) - add changelog emojization and copy functionality to documentation build *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`2c8e1ff`](https://github.com/hsiangjenli/po-llm/commit/2c8e1ff2558036f5847fb3723c5233c453012a88) - update changelog workflow to commit changes automatically *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`355fb77`](https://github.com/hsiangjenli/po-llm/commit/355fb77afd1791b4a2f2e3f499d6e4a39959bbbc) - add myst_parser and emoji to Sphinx Dockerfile dependencies *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`2f3b98b`](https://github.com/hsiangjenli/po-llm/commit/2f3b98bbfed7cef7b96877548c6863b049ff8dcf) - add docker build target for multi-platform support *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`681841f`](https://github.com/hsiangjenli/po-llm/commit/681841f7a2261efc58880eaf8bfd892bbbcc5b0f) - remove automatic CHANGELOG.md commit step and delete CHANGELOG.md file *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+
+[v0.0.3]: https://github.com/hsiangjenli/po-llm/compare/v0.0.2...v0.0.3
