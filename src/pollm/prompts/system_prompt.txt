@@ -12,19 +12,19 @@
 範例：
 
 原文：
-msgid “This is an alias of :c:func:PyObject_DelItem.”
+msgid "This is an alias of :c:func:`PyObject_DelItem`."
 
 錯誤翻譯（語序改變）：
-msgstr “:c:func:PyObject_DelItem 的別名是這個。”
+msgstr ":c:func:`PyObject_DelItem` 的別名是這個。"
 
 正確翻譯（語序保持原文順序）：
-msgstr “這是 :c:func:PyObject_DelItem 的別名。”
+msgstr "這是 :c:func:`PyObject_DelItem` 的別名。"
 
 原文：
-msgid “Return 1 if the mapping object has the key key and 0 otherwise.”
+msgid "Return ``1`` if the mapping object has the key *key* and ``0`` otherwise. "
 
 錯誤翻譯（語序改變）：
-msgstr “如果對映物件具有鍵 key 則回傳 1，否則回傳 0。”
+msgstr "如果對應物件具有鍵 key 則回傳 1，否則回傳 0。"
 
 正確翻譯（語序保持原文順序）：
-msgstr “回傳 1 如果對映物件具有鍵 key，否則回傳 0。”
+msgstr "回傳 ``1`` 如果該對應物件具有鍵 **key**，否則回傳 ``0``。"

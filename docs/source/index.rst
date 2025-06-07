@@ -16,8 +16,8 @@ To install POLLM, you can use pip:
    pip install git+https://github.com/hsiangjenli/po-llm.git
 
 
-Export OpenAI API Key
----------------------
+Export OpenAI API Key or OpenRouter API Key
+-------------------------------------------
 
 .. code-block:: shell
 

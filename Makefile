@@ -13,4 +13,4 @@ clean:
 	rm -rf dist/
 
 docker:
-	docker buildx build --platform linux/amd64,linux/arm64 -t hsiangjenli/pollm:lates -f Dockerfile.sphinx .
+	docker buildx build --platform linux/amd64,linux/arm64 -t hsiangjenli/pollm:latest -f Dockerfile.sphinx --push .

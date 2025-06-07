@@ -12,13 +12,11 @@ from pollm.prompt_utils import PromptManager
 # Init ------------------------------------------------------------------------------------------- #
 app = typer.Typer()
 
-# Set up the OpenAI api key
-api_key = os.getenv("POLLM_OPENAI_API_KEY") or "Ollama"
-kwargs = {"api_key": api_key}
+# Set up OpenRouter authentication
+api_key = os.getenv("POLLM_OPENAI_API_KEY")
+base_url = os.getenv("POLLM_BASE_URL", "https://openrouter.ai/api/v1")
 
-if api_key == "Ollama":
-    kwargs["base_url"] = "http://localhost:11434/v1"
-
+kwargs = {"api_key": api_key, "base_url": base_url}
 
 client = OpenAI(**kwargs)
 
@@ -46,7 +44,7 @@ def response_msgstr(
     client: OpenAI,
     prompt: str = "translate.txt",
     max_messages: int = 4,
-    model: str = "qwen2.5:14b",
+    model: str = "qwen/qwen-2.5-72b-instruct:free",  # OpenRouter model name
     temperature: float = 0.1,
 ):
     response = client.chat.completions.create(
@@ -62,7 +60,7 @@ def response_msgstr(
 @app.command("fuzzy")
 def cli_po_fuzzy(
     pofile: Path = typer.Argument(..., help="Path to the PO file"),
-    model: str = typer.Option("qwen2.5:14b", help="Model to use for translation"),
+    model: str = typer.Option("qwen/qwen-2.5-72b-instruct:free", help="Model to use for translation"),
     temperature: float = typer.Option(0.1, help="Temperature for the model"),
     max_messages: int = typer.Option(
         4, help="Maximum number of messages to send to the model"
@@ -99,12 +97,10 @@ def cli_po_fuzzy(
             )
             entry.flags.remove("fuzzy")
 
-        messages.append(
-            {
-                "role": "user",
-                "content": entry.msgstr,
-            }
-        )
+        messages.extend([
+            {"role": "user", "content": entry.msgid},
+            {"role": "assistant", "content": entry.msgstr}
+        ])
 
     po.save()
 
@@ -112,7 +108,7 @@ def cli_po_fuzzy(
 @app.command("translate")
 def cli_po_translate(
     pofile: Path = typer.Argument(..., help="Path to the PO file"),
-    model: str = typer.Option("qwen2.5:14b", help="Model to use for translation"),
+    model: str = typer.Option("qwen/qwen-2.5-72b-instruct:free", help="Model to use for translation"),
     temperature: float = typer.Option(0.1, help="Temperature for the model"),
     max_messages: int = typer.Option(
         4, help="Maximum number of messages to send to the model"
@@ -148,12 +144,10 @@ def cli_po_translate(
                 temperature=temperature,
             )
 
-        messages.append(
-            {
-                "role": "user",
-                "content": entry.msgstr,
-            }
-        )
+        messages.extend([
+            {"role": "user", "content": entry.msgid},
+            {"role": "assistant", "content": entry.msgstr}
+        ])
 
     po.save()
 
