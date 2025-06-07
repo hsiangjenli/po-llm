@@ -4,18 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.0.3] - 2025-04-16
+## [v0.0.4] - 2025-06-07
 ### ✨ New Features
-- [`f647bac`](https://github.com/hsiangjenli/po-llm/commit/f647bacb4a9822e982a31fd52d6672dd07e9d0ec) - configure OpenAI client to use environment variable for API key *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`dc4aa93`](https://github.com/hsiangjenli/po-llm/commit/dc4aa935cc2d58b0c37c9010aaadd4a92b866b3e) - switch to OpenRouter API and enhance translation prompts *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
 
 ### 🐛 Bug Fixes
-- [`a7ed54c`](https://github.com/hsiangjenli/po-llm/commit/a7ed54caa2ca6abb6a936e50d526ee99e0b93529) - update Docker image for documentation builds to latest version *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`f24b474`](https://github.com/hsiangjenli/po-llm/commit/f24b474cf95a3a02eb27df57dcc3251d27de7ec4) - update changelog workflow to allow forced pushes and skip dirty checks *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`df24ae3`](https://github.com/hsiangjenli/po-llm/commit/df24ae3bb95d2f047cc6b2853957d8eccda71855) - remove branch specification from changelog commit action *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`a41a99d`](https://github.com/hsiangjenli/po-llm/commit/a41a99d8d5dc7438cb171969efe717d3c5e5bc5d) - specify branch in changelog workflow for consistency *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`530b643`](https://github.com/hsiangjenli/po-llm/commit/530b6433c3828b3571c4e841b7b4fad41aee4bdd) - update changelog workflow to specify push options for main branch *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`f407cb8`](https://github.com/hsiangjenli/po-llm/commit/f407cb8cc1db30ade14e8a03dfba0baf022cef1a) - update changelog workflow to set origin/HEAD and improve commit options *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
 
 ### 🔧 Chores
-- [`5c3f154`](https://github.com/hsiangjenli/po-llm/commit/5c3f154610cbb1ddac999d3b7a448c5660fa2da2) - add changelog emojization and copy functionality to documentation build *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
-- [`2c8e1ff`](https://github.com/hsiangjenli/po-llm/commit/2c8e1ff2558036f5847fb3723c5233c453012a88) - update changelog workflow to commit changes automatically *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
-- [`355fb77`](https://github.com/hsiangjenli/po-llm/commit/355fb77afd1791b4a2f2e3f499d6e4a39959bbbc) - add myst_parser and emoji to Sphinx Dockerfile dependencies *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
-- [`2f3b98b`](https://github.com/hsiangjenli/po-llm/commit/2f3b98bbfed7cef7b96877548c6863b049ff8dcf) - add docker build target for multi-platform support *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
-- [`681841f`](https://github.com/hsiangjenli/po-llm/commit/681841f7a2261efc58880eaf8bfd892bbbcc5b0f) - remove automatic CHANGELOG.md commit step and delete CHANGELOG.md file *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`b930db3`](https://github.com/hsiangjenli/po-llm/commit/b930db3f334164969a419240f07f97c9c64c2c68) - ensure newline at end of changelog workflow file *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`f9b34c6`](https://github.com/hsiangjenli/po-llm/commit/f9b34c60023fa9c11d803f19bfb203df914ca6f6) - Update README.md *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
+- [`4547471`](https://github.com/hsiangjenli/po-llm/commit/45474714b2b5d553b3c0daa4dd734dda548a39e2) - bump version to 0.0.4 in pyproject.toml *(commit by [@hsiangjenli](https://github.com/hsiangjenli))*
 
-[v0.0.3]: https://github.com/hsiangjenli/po-llm/compare/v0.0.2...v0.0.3
+[v0.0.4]: https://github.com/hsiangjenli/po-llm/compare/v0.0.3...v0.0.4
