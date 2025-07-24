@@ -88,21 +88,37 @@ pollm agent example/bugs.po --target_entries untranslated --context_file context
 
 ## 🔧 beeai_framework Integration
 
-The agent is compatible with the beeai_framework ecosystem:
+The agent properly integrates with the [beeai-framework](https://github.com/i-am-bee/beeai-framework) ecosystem as a native BaseAgent:
 
 ```python
-from pollm.beeai_framework import create_agent
+from pollm.beeai_framework import create_translation_agent, TranslationRunInput
 
+# Create agent with proper beeai_framework integration
 config = {
     "api_key": "your-api-key",
     "max_iterations": 3,
     "confidence_threshold": 0.8
 }
 
-agent = create_agent(config)
+agent = create_translation_agent(config)
 
-# Process PO file
-result = agent.process({
+# Use with beeai_framework patterns
+from pathlib import Path
+
+run_input = TranslationRunInput(
+    po_file_path=Path("/path/to/file.po"),
+    model="qwen2.5:14b",
+    auto_confirm=False
+)
+
+# Execute with proper async/await patterns
+result = await agent.run(run_input)
+print(f"Translation completed: {result.state.entries_processed} entries processed")
+
+# Legacy compatibility also available
+from pollm.beeai_framework import create_agent  # Deprecated but supported
+legacy_agent = create_agent(config)
+result = legacy_agent.process({
     "action": "translate_po",
     "po_file_path": "/path/to/file.po",
     "model": "qwen2.5:14b"

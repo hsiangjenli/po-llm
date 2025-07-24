@@ -49,12 +49,44 @@ def example_agent_usage():
     print(")")
     print("```")
     
-    # 2. beeai_framework Integration
-    print("\n2. beeai_framework Integration:")
+    # 2. beeai_framework Integration (Proper BaseAgent)
+    print("\n2. beeai_framework Integration (Proper BaseAgent):")
     print("```python")
-    print("from pollm.beeai_framework import create_agent")
+    print("from pollm.beeai_framework import create_translation_agent, TranslationRunInput")
+    print("from pathlib import Path")
+    print("import asyncio")
     print()
-    print("# Create agent with configuration")
+    print("# Create agent with proper beeai_framework integration")
+    print("config = {")
+    print("    'api_key': 'your-api-key',")
+    print("    'base_url': 'http://localhost:11434/v1',")
+    print("    'max_iterations': 3,")
+    print("    'confidence_threshold': 0.8")
+    print("}")
+    print()
+    print("agent = create_translation_agent(config)")
+    print()
+    print("# Use with proper async/await patterns")
+    print("async def run_translation():")
+    print("    run_input = TranslationRunInput(")
+    print("        po_file_path=Path('/path/to/file.po'),")
+    print("        model='qwen2.5:14b',")
+    print("        auto_confirm=False")
+    print("    )")
+    print("    ")
+    print("    result = await agent.run(run_input)")
+    print("    print(f'Processed {result.state.entries_processed} entries')")
+    print()
+    print("# Execute")
+    print("asyncio.run(run_translation())")
+    print("```")
+    
+    # 2b. Legacy Compatibility
+    print("\n2b. Legacy Compatibility:")
+    print("```python")
+    print("from pollm.beeai_framework import create_agent  # Deprecated")
+    print()
+    print("# Legacy interface (deprecated but supported)")
     print("config = {")
     print("    'api_key': 'your-api-key',")
     print("    'base_url': 'http://localhost:11434/v1',")
@@ -64,7 +96,7 @@ def example_agent_usage():
     print()
     print("agent = create_agent(config)")
     print()
-    print("# Process PO file through framework interface")
+    print("# Process PO file through legacy interface")
     print("result = agent.process({")
     print("    'action': 'translate_po',")
     print("    'po_file_path': '/path/to/file.po',")
@@ -200,7 +232,12 @@ def example_beeai_plugin():
     try:
         from pollm.beeai_framework import PLUGIN_METADATA
         
-        print("Plugin Metadata:")
+        print("Plugin Metadata for beeai-framework integration:")
+        print(f"Framework: {PLUGIN_METADATA['framework']}")
+        print(f"Framework URL: {PLUGIN_METADATA['framework_url']}")
+        print(f"Agent Class: {PLUGIN_METADATA['agent_class']}")
+        print()
+        print("Full Metadata:")
         print(json.dumps(PLUGIN_METADATA, indent=2))
         
         print("\nCapabilities:")
@@ -211,8 +248,13 @@ def example_beeai_plugin():
         for action in PLUGIN_METADATA["supported_actions"]:
             print(f"  • {action}")
             
+        print(f"\nSchemas:")
+        print(f"  Input: {PLUGIN_METADATA['input_schema']}")
+        print(f"  Output: {PLUGIN_METADATA['output_schema']}")
+        print(f"  Options: {PLUGIN_METADATA['options_schema']}")
+            
     except ImportError:
-        print("⚠️  Could not load plugin metadata")
+        print("⚠️  Could not load plugin metadata - beeai_framework not available")
 
 
 def main():
