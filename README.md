@@ -5,6 +5,9 @@ A localization-friendly CLI tool powered by LLMs for translating and refining `.
 ## 🚀 Features
 
 - Translate `.po` files using LLMs like `qwen2.5:14b`, OpenAI-compatible models, or your local Ollama model
+- **NEW**: AI Agent for Iterative Contextual Translation with interactive refinement capabilities
+- **NEW**: MCP-style tool integration for translation search and suggestions
+- **NEW**: beeai_framework compatibility for agent ecosystem integration
 
 ## 📦 Installation
 
@@ -28,24 +31,85 @@ If you're using Ollama, no key is needed and `http://localhost:11434/v1` will be
 
 ## 🧠 CLI Usage
 
-### Translate all entries
+### Traditional Translation Commands
+
+#### Translate all entries
 
 ```bash
 pollm translate example/bugs.po --model qwen2.5:14b
 ```
 
-### Translate only fuzzy entries
+#### Translate only fuzzy entries
 
 ```bash
 pollm fuzzy example/bugs.po --model qwen2.5:14b
 ```
 
-Supported options:
+### 🤖 NEW: AI Agent for Iterative Translation
+
+The AI Agent provides an interactive, iterative translation workflow with context awareness:
+
+```bash
+# Interactive iterative translation
+pollm agent example/bugs.po --model qwen2.5:14b
+
+# Auto-confirm high confidence translations  
+pollm agent example/bugs.po --model qwen2.5:14b --auto_confirm --confidence_threshold 0.8
+
+# Process only untranslated entries with context persistence
+pollm agent example/bugs.po --target_entries untranslated --context_file context.json
+```
+
+#### Agent Features:
+- **Iterative Refinement**: Multiple passes with user feedback
+- **Context Awareness**: Learns from previous translations
+- **Interactive Confirmation**: Review and refine translations
+- **MCP Integration**: Search for suitable translations
+- **Confidence Scoring**: Auto-confirm high-quality translations
+- **Persistent Context**: Save translation memory between sessions
+
+### Supported Options
 
 - `--temperature`: Model randomness (default: `0.1`)
 - `--max-messages`: Max message history for context (default: `4`)
 - `--translate_mode`: `fully` or `untranslated`
+- `--max_iterations`: Max iterations per translation (agent only, default: `3`)
+- `--auto_confirm`: Auto-confirm high confidence translations (agent only)
+- `--confidence_threshold`: Threshold for auto-confirmation (agent only, default: `0.8`)
+- `--context_file`: Save/load translation context (agent only)
+
+## 🎯 Agent Workflow
+
+1. **Analysis**: Examine source text and search for contextual clues
+2. **Generation**: Create translation using LLM with context awareness
+3. **Confirmation**: Present translation with confidence score for review
+4. **Refinement**: Collect feedback and improve translation iteratively
+5. **Learning**: Store successful translations for future consistency
+
+## 🔧 beeai_framework Integration
+
+The agent is compatible with the beeai_framework ecosystem:
+
+```python
+from pollm.beeai_framework import create_agent
+
+config = {
+    "api_key": "your-api-key",
+    "max_iterations": 3,
+    "confidence_threshold": 0.8
+}
+
+agent = create_agent(config)
+
+# Process PO file
+result = agent.process({
+    "action": "translate_po",
+    "po_file_path": "/path/to/file.po",
+    "model": "qwen2.5:14b"
+})
+```
 
 ## 📚 Documentation
 
 - https://hsiangjenli.github.io/po-llm/
+- [AI Agent Implementation Guide](docs/AGENT_IMPLEMENTATION.md)

@@ -8,6 +8,7 @@ from openai import OpenAI
 
 from pollm.glossary import search_glossary
 from pollm.prompt_utils import PromptManager
+from pollm.agent import IterativeTranslationAgent, MCPTranslationTool
 
 # Init ------------------------------------------------------------------------------------------- #
 app = typer.Typer()
@@ -150,6 +151,93 @@ def cli_po_translate(
         ])
 
     po.save()
+
+
+@app.command("agent")
+def cli_agent_translate(
+    pofile: Path = typer.Argument(..., help="Path to the PO file"),
+    model: str = typer.Option("qwen/qwen-2.5-72b-instruct:free", help="Model to use for translation"),
+    temperature: float = typer.Option(0.1, help="Temperature for the model"),
+    max_iterations: int = typer.Option(3, help="Maximum iterations per translation"),
+    target_entries: str = typer.Option("untranslated", help="Target entries: untranslated, fuzzy, all"),
+    auto_confirm: bool = typer.Option(False, help="Auto-confirm high confidence translations"),
+    confidence_threshold: float = typer.Option(0.8, help="Confidence threshold for auto-confirmation"),
+    context_file: Path = typer.Option(None, help="Path to save/load translation context"),
+):
+    """Interactive AI agent for iterative contextual translation.
+    
+    This command implements an iterative translation workflow that:
+    - Uses MCP-style tools to search for suitable translations
+    - Provides interactive confirmation and refinement capabilities
+    - Maintains context across translation iterations
+    - Learns from user feedback to improve subsequent translations
+    
+    .. code-block:: shell
+    
+        pollm agent <pofile> --model <model> --max_iterations 3 --auto_confirm
+    
+    Args:
+        pofile (Path): PO file path
+        model (str): LLM model name
+        temperature (float): Model temperature for creativity
+        max_iterations (int): Maximum refinement iterations per entry
+        target_entries (str): Which entries to process (untranslated/fuzzy/all)
+        auto_confirm (bool): Auto-confirm translations above confidence threshold
+        confidence_threshold (float): Threshold for auto-confirmation (0.0-1.0)
+        context_file (Path): File to persist translation context between sessions
+    """
+    
+    # Initialize MCP tool and agent
+    mcp_tool = MCPTranslationTool()
+    agent = IterativeTranslationAgent(
+        client=client,
+        prompt_manager=PromptManager(),
+        mcp_tool=mcp_tool,
+        max_iterations=max_iterations,
+        confidence_threshold=confidence_threshold
+    )
+    
+    # Load previous context if available
+    if context_file and context_file.exists():
+        print(f"Loading translation context from {context_file}")
+        agent.load_session_context(context_file)
+    
+    print(f"Starting iterative translation with AI agent...")
+    print(f"Model: {model}")
+    print(f"Max iterations per entry: {max_iterations}")
+    print(f"Target entries: {target_entries}")
+    print(f"Auto-confirm threshold: {confidence_threshold}")
+    print(f"Interactive mode: {'No' if auto_confirm else 'Yes'}")
+    
+    # Process the PO file
+    results = agent.process_po_file(
+        po_file_path=pofile,
+        model=model,
+        temperature=temperature,
+        auto_confirm=auto_confirm,
+        target_entries=target_entries
+    )
+    
+    # Save context if specified
+    if context_file:
+        agent.save_session_context(context_file)
+        print(f"Translation context saved to {context_file}")
+    
+    # Print results summary
+    print(f"\n{'='*50}")
+    print("TRANSLATION SUMMARY")
+    print(f"{'='*50}")
+    print(f"Processed entries: {results['processed']}")
+    print(f"Accepted translations: {results['accepted']}")
+    print(f"Skipped entries: {results['skipped']}")
+    print(f"Failed entries: {results['failed']}")
+    print(f"Total iterations used: {results['total_iterations']}")
+    
+    if results['processed'] > 0:
+        avg_iterations = results['total_iterations'] / results['processed']
+        print(f"Average iterations per entry: {avg_iterations:.1f}")
+        success_rate = results['accepted'] / results['processed'] * 100
+        print(f"Success rate: {success_rate:.1f}%")
 
 
 if __name__ == "__main__":
