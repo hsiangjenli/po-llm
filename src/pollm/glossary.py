@@ -189,12 +189,12 @@ if __name__ == "__main__":
 
     # normalize 原文 並根據來源優先順序去重（優先保留 official_2, official_3）
     priority = {
-        "official_2": 0,
-        "official_3": 0,
-        "official": 1,
-        "python_docs_zh_tw": 2,
-        "wikibooks": 3,
-        "hackmd": 4,
+        "official_2": 0,  # focused_terminology_dictionary.csv
+        "official_3": 1,  # terminology_dictionary.csv
+        "official": 2,
+        "python_docs_zh_tw": 3,
+        "wikibooks": 4,
+        "hackmd": 5,
     }
 
     df["__rank"] = df["__source"].map(priority).fillna(99).astype(int)
