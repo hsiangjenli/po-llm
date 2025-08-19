@@ -16,6 +16,9 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
+import warnings
+from urllib.error import URLError
+from pandas.errors import ParserError, EmptyDataError
 
 csv_path = __file__.replace("glossary.py", "glossary.csv")
 
