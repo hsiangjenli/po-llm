@@ -60,7 +60,7 @@ openai==1.65.2
     # via pollm
 packaging==24.2
     # via pytest
-pandas==2.2.3
+pandas==2.3.1
     # via pollm
 playwright==1.50.0
     # via pytest-playwright
