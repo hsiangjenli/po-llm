@@ -203,7 +203,7 @@ if __name__ == "__main__":
     df = df.assign(原文=df["原文"].str.split(", ")).explode("原文")
 
     # remove dashes or symbols in 原文, collapse spaces, strip
-    df["原文"] = df["原文"].str.replace("[^a-zA-Z0-9]", " ", regex=True)
+    df["原文"] = df["原文"].str.replace("[^a-zA-Z0-9_]", " ", regex=True)
     df["原文"] = df["原文"].str.replace(" +", " ", regex=True).str.strip()
 
     # sort by 原文 then rank so preferred sources come first
