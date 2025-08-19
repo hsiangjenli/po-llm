@@ -111,7 +111,7 @@ def get_glossary_from_python_docs_zh_tw_terminology_dictionary_csv(csv_path: str
             columns={"source_term": "原文", "translated_term": "翻譯"}, inplace=True
         )
         return df[["原文", "翻譯"]]
-    except Exception as exc:
+    except (ParserError, EmptyDataError, URLError) as exc:
         raise RuntimeError(f"Could not fetch terminology CSV from {raw_url}: {exc}")
 
 
