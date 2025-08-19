@@ -1,6 +1,21 @@
 原文,翻譯
 32 bit,32 位元
 64 bit,64 位元
+__call__,__call__
+__contains__,__contains__
+__del__,__del__
+__delitem__,__delitem__
+__enter__,__enter__
+__exit__,__exit__
+__getitem__,__getitem__
+__init__,__init__
+__iter__,__iter__
+__len__,__len__
+__new__,__new__
+__next__,__next__
+__repr__,__repr__
+__setitem__,__setitem__
+__str__,__str__
 abstract,摘要；抽象的
 abstract base class,抽象基底類別
 abstraction,抽象
@@ -109,7 +124,7 @@ byte,位元組
 bytecode,位元組碼
 bytes like object,類位元組串物件
 cache,快取記憶體，快取
-call,__call__
+call,呼叫（invoke 可譯為「叫用」、「呼叫」）
 callable,可呼叫物件
 callback,回呼
 carriage return,回車字元
@@ -170,7 +185,6 @@ constant,常數
 constraint,約束；限制
 constructor,建構子，建構式，建構函式
 container,容器
-contains,__contains__
 context,情境
 context management protocol,情境管理協定
 context manager,情境管理器
@@ -216,7 +230,6 @@ definition,定義；解析度
 del,del
 delegate,委派
 delegation,委派
-delitem,__delitem__
 dependency,相依性；依賴關係
 deprecated,已棄用
 derived class,衍生類別
@@ -261,7 +274,7 @@ else,else
 email,電子郵件
 enable,啟用
 encapsulation,封裝
-enter,__enter__
+enter,確認；進入
 entity,實體
 enum,列舉
 enumeration,列舉
@@ -274,7 +287,6 @@ event loop,事件迴圈
 except,except
 exception,例外
 execution,執行
-exit,__exit__
 explicit,明確的 (win)；顯式 (mac)
 export,匯出
 expression,運算式
@@ -342,7 +354,6 @@ generic,通用的
 generic function,泛型函式
 generic type,泛型型別
 generics,泛型
-getitem,__getitem__
 global,global
 global interpreter lock,全域直譯器鎖
 global settings,全域設定
@@ -399,7 +410,6 @@ info,資訊
 information,資訊
 information technology,資訊科技  IT
 inheritance,繼承
-init,__init__
 initialization,初始化
 inline,行內；內嵌
 instance,實例
@@ -422,7 +432,6 @@ interpreter shutdown,直譯器關閉
 introduce,介紹
 invoke,叫用、呼叫（勿譯為「調用」）
 is,is
-iter,__iter__
 iterable,可疊代
 iterate,疊代
 iteration,疊代
@@ -441,7 +450,6 @@ lambda,lambda
 lan,LAN  區域網路
 layout,布局，配置
 lazy loading,惰性載入；消極式載入；延遲載入；懶載入
-len,__len__
 level,階 / 層級 / 層
 lexer,詞法分析器
 lexical analysis,詞法分析
@@ -507,7 +515,6 @@ named tuple,具名元組
 nameerror,NameError
 namespace,命名空間
 namespace package,命名空間套件
-nan,
 native,原生
 navigate,導覽
 navigation,導覽
@@ -517,9 +524,8 @@ nested,巢狀的
 nested scope,巢狀作用域
 network,網路
 network adapter,網路介面卡
-new,__new__
+new,新增
 new style class,新式類別
-next,__next__
 nonlocal,nonlocal
 not,not
 notarization,公證
@@ -640,7 +646,6 @@ regular package,正規套件
 release,（發行、發布）版本
 remote,遠端
 render,算繪；渲染
-repr,__repr__
 resolution,解析度
 resolve,解析
 response,回應
@@ -685,7 +690,6 @@ session layer,會議層
 set,集合
 set comprehension,集合綜合運算
 set up,設定
-setitem,__setitem__
 settings,設定
 shortcut,捷徑
 shortcut key,快速鍵
