@@ -87,7 +87,7 @@ def get_glossary_from_python_docs_zh_tw_terminology_dictionary_csv(csv_path: str
                 return tuple(int(p) for p in s.split("."))
 
             return max(numeric, key=ver_key)
-        except Exception as exc:
+        except (requests.RequestException, ValueError) as exc:
             print(
             warnings.warn(
                 f"Could not fetch branches from GitHub API, falling back to 'main'. Error: {exc}",
