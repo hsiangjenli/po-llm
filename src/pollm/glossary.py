@@ -96,16 +96,12 @@ def get_glossary_from_python_docs_zh_tw_terminology_dictionary_csv(csv_path: str
     raw_url = f"https://raw.githubusercontent.com/python/python-docs-zh-tw/{branch}/{csv_path}"
 
     try:
-        df = pd.read_csv(raw_url, dtype=str)
-        df.columns = [
-            "source_term",
-            "translated_term",
-            "frequency",
-            "files_count",
-            "source_file",
-            "directory",
-            "example_files",
-        ]
+        df = pd.read_csv(
+            raw_url,
+            usecols=["source_term", "translated_term"],
+            dtype=str,
+        )
+
         # rename column
         df.rename(
             columns={"source_term": "原文", "translated_term": "翻譯"}, inplace=True
