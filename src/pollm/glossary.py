@@ -54,9 +54,6 @@ def get_glossary_from_python_docs_zh_tw_terminology_dictionary_csv(csv_path: str
     此函式會呼叫 GitHub Branches API，挑選形如 "X.Y" 的數字分支（例如 "3.13"），
     並以最高版本作為來源分支，然後從 raw.githubusercontent.com 讀取指定的 CSV 檔案。
 
-    若直接以 ``pandas.read_csv`` 讀取失敗，會改以 ``requests`` 下載再用 ``StringIO`` 讀取；
-    若無法取得任何數字分支，會退回使用 'main' 分支。
-
     Parameters
     ----------
     csv_path : str
