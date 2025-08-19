@@ -209,7 +209,7 @@ if __name__ == "__main__":
     # if 原文 contains ", " then split it and explode
     df = df.assign(原文=df["原文"].str.split(", ")).explode("原文")
 
-    # remove dashes or symbols in 原文, collapse spaces, strip
+    # remove unwanted symbols in 原文 but keep underscores (preserve __magic__ names), collapse spaces, strip
     df["原文"] = df["原文"].str.replace("[^a-zA-Z0-9_]", " ", regex=True)
     df["原文"] = df["原文"].str.replace(" +", " ", regex=True).str.strip()
 
