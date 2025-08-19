@@ -93,7 +93,7 @@ def get_glossary_from_python_docs_zh_tw_terminology_dictionary_csv(csv_path: str
         except (requests.RequestException, ValueError) as exc:
             warnings.warn(
                 f"Could not fetch branches from GitHub API, falling back to 'main'. Error: {exc}",
-                RuntimeWarning
+                RuntimeWarning,
             )
             return None
 
