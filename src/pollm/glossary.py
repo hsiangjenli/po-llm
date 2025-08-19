@@ -198,6 +198,7 @@ if __name__ == "__main__":
     df["__rank"] = df["__source"].map(priority).fillna(99).astype(int)
 
     # normalize text
+    df.dropna(subset=["原文"], inplace=True)
     df["原文"] = df["原文"].astype(str).str.lower()
     # if 原文 contains ", " then split it and explode
     df = df.assign(原文=df["原文"].str.split(", ")).explode("原文")
